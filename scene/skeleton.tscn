@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://oty7hkjb80lc" path="res://assets/images/enemy/enemies-skeleton1_death.png" id="3_rwpf0"]
 [ext_resource type="Texture2D" uid="uid://ft85jdmppprj" path="res://assets/images/enemy/enemies-skeleton1_idle.png" id="4_ew5mc"]
 [ext_resource type="Texture2D" uid="uid://c3mqfhupnv71u" path="res://assets/images/enemy/enemies-skeleton1_movement.png" id="5_vqc8v"]
+[ext_resource type="AudioStream" uid="uid://vrvloioc7ock" path="res://assets/audio/skeleton-hurt-2-made-with-Voicemod.mp3" id="7_2di4e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ft6oh"]
 atlas = ExtResource("1_uaaco")
@@ -225,7 +226,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gku70")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"attack",
 "speed": 7.0
 }, {
@@ -325,7 +326,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_gksni")
 }],
 "loop": 1,
-"name": &"idle_right ",
+"name": &"idle_right_enemy ",
 "speed": 6.0
 }, {
 "frames": [{
@@ -360,7 +361,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_g7q35")
 }],
 "loop": 1,
-"name": &"run_right",
+"name": &"run_right_enemy",
 "speed": 9.0
 }]
 
@@ -386,13 +387,12 @@ radius = 50.0
 
 [node name="skeleton" type="CharacterBody2D" unique_id=450503683]
 collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_d7bxq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=712511188]
 sprite_frames = SubResource("SpriteFrames_s830y")
-animation = &"idle_right "
-frame = 1
-frame_progress = 0.83746976
+animation = &"idle_right_enemy "
 script = SubResource("GDScript_2di4e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=135577660]
@@ -405,4 +405,8 @@ shape = SubResource("RectangleShape2D_s830y")
 position = Vector2(-3, 6)
 shape = SubResource("CircleShape2D_s830y")
 
+[node name="take_damage" type="AudioStreamPlayer2D" parent="." unique_id=1829561369]
+stream = ExtResource("7_2di4e")
+
 [connection signal="body_entered" from="sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="sight" to="." method="_on_sight_body_exited"]
