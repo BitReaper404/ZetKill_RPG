@@ -427,7 +427,7 @@ size = Vector2(11, 11)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ba5bk"]
 size = Vector2(14, 15)
 
-[node name="player" type="CharacterBody2D" unique_id=429949456]
+[node name="player" type="CharacterBody2D" unique_id=429949456 groups=["player"]]
 script = ExtResource("1_hjaqi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1342218518]

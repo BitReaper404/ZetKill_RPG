@@ -246,9 +246,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nnwmq")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"damage",
-"speed": 7.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -302,7 +302,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_egyty")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"death",
 "speed": 8.0
 }, {
@@ -326,7 +326,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_gksni")
 }],
 "loop": 1,
-"name": &"idle_right_enemy ",
+"name": &"idle_right_enemy",
 "speed": 6.0
 }, {
 "frames": [{
@@ -392,7 +392,7 @@ script = ExtResource("1_d7bxq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=712511188]
 sprite_frames = SubResource("SpriteFrames_s830y")
-animation = &"idle_right_enemy "
+animation = &"idle_right_enemy"
 script = SubResource("GDScript_2di4e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=135577660]
